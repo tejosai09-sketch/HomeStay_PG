@@ -1,0 +1,300 @@
+
+
+@media (max-width:560px){
+
+    .wrap{
+        padding:0 18px;
+    }
+
+    section{
+        padding:60px 0;
+    }
+
+    /* Navbar */
+
+    .brand{
+        gap:10px;
+    }
+
+    .brand-mark{
+        width:42px;
+        height:42px;
+    }
+
+    .brand-mark svg{
+        width:22px;
+        height:22px;
+    }
+
+    .brand-title{
+        font-size:18px;
+    }
+
+    .brand-subtitle{
+        font-size:9px;
+        letter-spacing:.18em;
+    }
+
+    /* Hero */
+
+    .hero{
+        padding-top:35px;
+        padding-bottom:45px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .hero h1{
+        font-size:36px;
+        line-height:1.15;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        gap:14px;
+    }
+
+    .hero-actions a{
+        width:100%;
+        justify-content:center;
+    }
+
+    /* Route Card */
+
+    .route-card{
+        margin-top:15px;
+    }
+
+    .route-svg{
+        height:220px;
+    }
+
+    /* Section Heading */
+
+    .section-head h2{
+        font-size:30px;
+    }
+
+    .section-head p{
+        font-size:15px;
+    }
+
+    /* Core Features */
+
+    .core-features{
+        margin:40px 0;
+    }
+
+    .core-features h3{
+        font-size:26px;
+        text-align:center;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .feature-item{
+        padding:18px;
+        font-size:15px;
+    }
+
+    /* Room Cards */
+
+    .room-grid{
+        grid-template-columns:1fr;
+        gap:22px;
+    }
+
+    .room-card{
+        padding:24px;
+    }
+
+    .room-card .price{
+        font-size:22px;
+    }
+
+    /* Amenities */
+
+    .amenity-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .amenity{
+        padding:22px;
+    }
+
+    /* Gallery */
+
+    .gallery{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    /* Location */
+
+    .loc-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .map-frame{
+        height:300px;
+    }
+
+    /* Contact */
+
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    input,
+    textarea,
+    select{
+        font-size:16px;
+    }
+
+    .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    /* Footer */
+
+    .foot-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+        text-align:center;
+    }
+
+}
+  /* ===========================================
+   Included With Every Room
+=========================================== */
+
+.core-features{
+    margin:50px 0 60px;
+}
+
+.core-features h3{
+    font-family:'Fraunces', serif;
+    font-size:32px;
+    color:var(--pine);
+    margin-bottom:24px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.feature-item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-weight:500;
+    color:var(--ink);
+    transition:all .3s ease;
+    cursor:default;
+}
+
+.feature-item:hover{
+    transform:translateY(-5px);
+    border-color:var(--marigold);
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+}
+/* ===========================
+   Mobile Navigation
+=========================== */
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:34px;
+    color:var(--pine);
+    cursor:pointer;
+    padding:0;
+    z-index:1001;
+}
+
+@media (max-width:768px){
+
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:14px 0;
+    }
+
+    .menu-toggle{
+        display:block;
+        order:1;
+    }
+
+    .brand{
+        order:2;
+        margin:auto;
+    }
+
+    .cta{
+        display:none;
+    }
+
+    nav{
+        position:fixed;
+        top:0;
+        left:-100%;
+        width:280px;
+        height:100vh;
+        background:#fff;
+        box-shadow:10px 0 40px rgba(0,0,0,.12);
+        transition:.35s;
+        z-index:1000;
+
+        display:flex;
+        align-items:flex-start;
+        padding-top:90px;
+    }
+
+    nav.active{
+        left:0;
+    }
+
+    nav ul{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        padding:0 30px;
+        gap:28px;
+    }
+
+    nav li{
+        list-style:none;
+    }
+
+    nav a{
+        text-decoration:none;
+        color:var(--ink);
+        font-size:18px;
+        font-weight:600;
+    }
+
+}
