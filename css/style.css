@@ -54,7 +54,19 @@
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
-  .navbar{ display:flex; align-items:center; justify-content:space-between; padding:16px 24px; }
+  .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 24px;
+    position:relative;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
  .brand{
     display:flex;
     align-items:center;
@@ -99,7 +111,28 @@
     text-transform:uppercase;
     color:var(--kumkum);
 }
-  nav ul{ list-style:none; display:flex; gap:26px; margin:0; padding:0; font-size:14.5px; font-weight:500; }
+.nav-menu ul{
+    list-style:none;
+    display:flex;
+    gap:26px;
+    margin:0;
+    padding:0;
+    font-size:14.5px;
+    font-weight:500;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:var(--ink);
+    opacity:.8;
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+}
+
+.nav-menu a:hover{
+    opacity:1;
+    border-color:var(--marigold);
+}
   nav a{ text-decoration:none; color:var(--ink); opacity:0.8; padding:6px 2px; border-bottom:2px solid transparent; }
   nav a:hover{ opacity:1; border-color:var(--marigold); }
   .cta{
@@ -111,7 +144,25 @@
   .cta:hover{ background:#8c303b; }
   .cta.ghost{ background:transparent; color:var(--pine); border:1.5px solid var(--pine); box-shadow:none; }
   .cta.ghost:hover{ background:var(--pine); color:#fff; }
-  .menu-toggle{ display:none; }
+.menu-toggle{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:transparent;
+
+    font-size:30px;
+
+    color:var(--pine);
+
+    cursor:pointer;
+
+}
 
   /* ---------- hero ---------- */
   .hero{ padding:64px 0 40px; }

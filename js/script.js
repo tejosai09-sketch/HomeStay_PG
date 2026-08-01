@@ -1,15 +1,13 @@
+const menuBtn = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
 
+menuBtn.addEventListener("click", () => {
 
-const menu = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+    navMenu.classList.toggle("active");
 
-menu.onclick = () => {
-
-    nav.classList.toggle("active");
-
-    menu.innerHTML =
-        nav.classList.contains("active")
+    menuBtn.textContent =
+        navMenu.classList.contains("active")
         ? "✕"
         : "☰";
 
-};
+});
