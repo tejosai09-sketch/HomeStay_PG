@@ -403,3 +403,61 @@
 }
 
 }
+@media (max-width:1024px){
+
+.logo-img{
+    height:55px;
+}
+
+}
+@media (max-width:768px){
+
+.logo-img{
+    height:44px;
+}
+
+}
+@media (max-width:768px){
+
+    .footer-logo{
+        display:flex;
+        justify-content:center;
+    }
+
+    .footer-logo-img{
+        height:60px;
+    }
+
+    .footer-desc{
+        text-align:center;
+        margin:auto;
+    }
+
+}
+@media (max-width:768px){
+
+.gym-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+}
+
+.gym-content{
+    text-align:center;
+}
+
+.gym-content h2{
+    font-size:32px;
+}
+
+.gym-features{
+    grid-template-columns:1fr;
+}
+
+.gym-badge{
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    text-align:center;
+}
+
+}
