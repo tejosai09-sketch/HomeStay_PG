@@ -45,14 +45,14 @@ const response = await fetch(
 );
         const data = await response.json();
 
-        if (!response.ok) {
-            console.error("WhatsApp API error:", data);
+if (!response.ok) {
+    console.error("WhatsApp API error:", data);
 
-            return res.status(response.status).json({
-                error: "WhatsApp message failed"
-            });
-        }
-
+    return res.status(response.status).json({
+        error: "WhatsApp message failed",
+        meta_error: data
+    });
+}
         return res.status(200).json({
             success: true,
             message: "WhatsApp message sent successfully"
