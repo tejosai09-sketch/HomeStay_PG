@@ -75,11 +75,7 @@ Please contact the visitor to confirm.
 
         const metaData = await metaResponse.json();
 
-        console.log(
-            "META RESPONSE:",
-            JSON.stringify(metaData, null, 2)
-        );
-
+console.log("WHATSAPP API RESPONSE:", data);
         if (!metaResponse.ok) {
             return res.status(200).json({
                 success: false,
