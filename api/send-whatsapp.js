@@ -93,16 +93,15 @@ console.log("WHATSAPP API RESPONSE:", data);
                 metaData.contacts?.[0]?.wa_id || null
         });
 
-    } catch (error) {
+   } catch (error) {
 
-        console.error(
-            "SEND WHATSAPP SERVER ERROR:",
-            error
-        );
+    console.error("SEND WHATSAPP SERVER ERROR:", error);
 
-        return res.status(500).json({
-            error: "Server error",
-            details: error.message
-        });
-    }
+    return res.status(200).json({
+        success: false,
+        error: "Server error",
+        details: error?.message || String(error),
+        error_name: error?.name || "Unknown"
+    });
+}
 }
