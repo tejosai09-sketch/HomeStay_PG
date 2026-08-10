@@ -62,15 +62,13 @@ console.log(
 );
 
 
-        if (!response.ok) {
-
-            console.error("WhatsApp API error:", data);
-
-            return res.status(response.status).json({
-                error: "WhatsApp message failed",
-                meta_error: data
-            });
-        }
+  if (!response.ok || data.success === false) {
+    throw new Error(
+        data.meta_error?.error?.message ||
+        data.error ||
+        "Something went wrong"
+    );
+}
 
 return res.status(200).json({
     success: true,
