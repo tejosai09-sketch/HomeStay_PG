@@ -66,11 +66,12 @@ Please contact the visitor to confirm.
             });
         }
 
-        return res.status(200).json({
-            success: true,
-            message: "WhatsApp message sent successfully",
-            data
-        });
+return res.status(200).json({
+    success: true,
+    message: "WhatsApp message sent successfully",
+    whatsapp_message_id: data.messages?.[0]?.id || null,
+    recipient: data.contacts?.[0]?.wa_id || null
+});
 
     } catch (error) {
 
