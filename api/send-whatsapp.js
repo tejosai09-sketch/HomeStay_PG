@@ -55,6 +55,12 @@ Please contact the visitor to confirm.
         );
 
         const data = await response.json();
+        
+console.log(
+    "META WHATSAPP RESPONSE:",
+    JSON.stringify(data, null, 2)
+);
+
 
         if (!response.ok) {
 
