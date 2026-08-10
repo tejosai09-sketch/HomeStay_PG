@@ -1,47 +1,70 @@
+// ========================================
+// Mobile Navigation
+// ========================================
+
 const menuBtn = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 
-menuBtn.addEventListener("click", () => {
+if (menuBtn && navMenu) {
 
-    navMenu.classList.toggle("active");
+    // Open / close menu
+    menuBtn.addEventListener("click", function (e) {
 
-    menuBtn.textContent =
-        navMenu.classList.contains("active")
-        ? "✕"
-        : "☰";
+        e.stopPropagation();
 
-});
-// Close menu when clicking outside
+        navMenu.classList.toggle("active");
 
-document.addEventListener("click", function (e) {
-
-    if (
-        nav.classList.contains("active") &&
-        !nav.contains(e.target) &&
-        !menuToggle.contains(e.target)
-    ) {
-        nav.classList.remove("active");
-    }
-
-});
-document.querySelectorAll("nav a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        nav.classList.remove("active");
+        menuBtn.textContent =
+            navMenu.classList.contains("active")
+                ? "✕"
+                : "☰";
 
     });
 
-});
-document.addEventListener("keydown", function (e) {
 
-    if (e.key === "Escape") {
+    // Close when clicking outside
+    document.addEventListener("click", function (e) {
 
-        nav.classList.remove("active");
+        if (
+            navMenu.classList.contains("active") &&
+            !navMenu.contains(e.target) &&
+            !menuBtn.contains(e.target)
+        ) {
 
-    }
+            navMenu.classList.remove("active");
+            menuBtn.textContent = "☰";
 
-});
+        }
+
+    });
+
+
+    // Close after clicking a navigation link
+    navMenu.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navMenu.classList.remove("active");
+            menuBtn.textContent = "☰";
+
+        });
+
+    });
+
+
+    // Close with Escape key
+    document.addEventListener("keydown", function (e) {
+
+        if (e.key === "Escape") {
+
+            navMenu.classList.remove("active");
+            menuBtn.textContent = "☰";
+
+        }
+
+    });
+
+}
 // ================================
 // Weekly Food Menu
 // ================================
@@ -275,3 +298,80 @@ buttons.forEach(button=>{
 // Default Menu
 
 loadMenu("sun");
+// ========================================
+// Schedule a Visit → WhatsApp
+// ========================================
+
+const visitForm = document.getElementById("visitForm");
+const visitSubmit = document.getElementById("visitSubmit");
+const formMessage = document.getElementById("formMessage");
+
+if (visitForm) {
+
+    visitForm.addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const name = document.getElementById("visitorName").value.trim();
+        const phone = document.getElementById("visitorPhone").value.trim();
+        const sharing = document.getElementById("sharingType").value.trim();
+
+        if (!name || !phone) {
+            formMessage.textContent = "Please enter your name and phone number.";
+            return;
+        }
+
+        // Change button while sending
+        visitSubmit.disabled = true;
+        visitSubmit.textContent = "Sending...";
+
+        formMessage.textContent = "";
+
+        try {
+
+            const response = await fetch("/api/send-whatsapp", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    date: "Not specified",
+                    time: "Not specified",
+                    visitors: sharing || "Not specified"
+                })
+
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Something went wrong");
+            }
+
+            formMessage.textContent =
+                "Thank you! We received your request. We'll contact you shortly.";
+
+            visitForm.reset();
+
+        } catch (error) {
+
+            console.error("WhatsApp error:", error);
+
+            formMessage.textContent =
+                "Something went wrong. Please try again.";
+
+        } finally {
+
+            visitSubmit.disabled = false;
+            visitSubmit.textContent = "Request a Callback";
+
+        }
+
+    });
+
+}

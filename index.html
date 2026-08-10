@@ -410,12 +410,33 @@ TESTIMONIALS
         <h2>See the room before you decide.</h2>
         <p>Leave your number — our team will call to confirm availability and set up a visit.</p>
       </div>
-      <form class="form" onsubmit="return false;">
-        <input type="text" placeholder="Full name" required>
-        <input type="tel" placeholder="Phone / WhatsApp number" required>
-        <input type="text" placeholder="Preferred sharing type (1/2/3/4)">
-        <button type="submit" class="cta">Request a Callback</button>
-      </form>
+<form class="form" id="visitForm">
+    <input
+        type="text"
+        id="visitorName"
+        placeholder="Full name"
+        required
+    >
+
+    <input
+        type="tel"
+        id="visitorPhone"
+        placeholder="Phone / WhatsApp number"
+        required
+    >
+
+    <input
+        type="text"
+        id="sharingType"
+        placeholder="Preferred sharing type (1/2/3/4)"
+    >
+
+    <button type="submit" class="cta" id="visitSubmit">
+        Request a Callback
+    </button>
+
+    <p id="formMessage" style="margin-top:10px;"></p>
+</form>
     </div>
   </div>
 
