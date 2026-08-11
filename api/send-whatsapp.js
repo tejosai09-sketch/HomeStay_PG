@@ -52,18 +52,17 @@ Please contact the visitor to confirm.
 
                     "Content-Type": "application/json"
                 },
-
-                body: JSON.stringify({
-                    messaging_product: "whatsapp",
-
-                    to: process.env.WHATSAPP_TEST_RECIPIENT,
-
-                    type: "text",
-
-                    text: {
-                        body: message
-                    }
-                })
+body: JSON.stringify({
+    messaging_product: "whatsapp",
+    to: process.env.WHATSAPP_TEST_RECIPIENT,
+    type: "template",
+    template: {
+        name: "YOUR_TEMPLATE_NAME",
+        language: {
+            code: "en_US"
+        }
+    }
+})
             }
         );
 
