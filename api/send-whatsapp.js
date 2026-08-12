@@ -54,13 +54,46 @@ Please contact the visitor to confirm.
                 },
 body: JSON.stringify({
     messaging_product: "whatsapp",
+
     to: process.env.WHATSAPP_TEST_RECIPIENT,
+
     type: "template",
+
     template: {
-        name: "YOUR_TEMPLATE_NAME",
+        name: "visit_request",
+
         language: {
-            code: "en_US"
-        }
+            code: "en"
+        },
+
+        components: [
+            {
+                type: "body",
+
+                parameters: [
+                    {
+                        type: "text",
+                        text: name
+                    },
+                    {
+                        type: "text",
+                        text: phone
+                    },
+                    {
+                        type: "text",
+                        text: date
+                    },
+                    {
+                        type: "text",
+                        text: time
+                    },
+                    {
+                        type: "text",
+                        text: visitors
+                    }
+                ]
+            }
+        ]
     }
 })
             }
