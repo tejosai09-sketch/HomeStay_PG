@@ -74,25 +74,21 @@ const weeklyMenu = {
     sun: {
 
         breakfast: [
-            "Poori",
-            "Aloo Curry",
-            "Tea / Coffee",
-            "Banana"
+            "Upma",
+            "Or",
+            "Poha"
+            
         ],
 
         lunch: [
-            "Rice",
-            "Chicken Curry",
-            "Dal",
-            "Curd",
-            "Sweet"
+            "Chicken Dum Biryani",
+            "Paneer Dum Biryani"
+            
         ],
 
         dinner: [
-            "Chapati",
-            "Paneer Curry",
-            "Rice",
-            "Rasam"
+             "Chutney", "Rice", "Sambar", "Curd", "Papad"
+            
         ]
 
     },
@@ -100,24 +96,15 @@ const weeklyMenu = {
     mon: {
 
         breakfast: [
-            "Idli",
-            "Vada",
-            "Sambar",
-            "Tea / Coffee"
+            "Idly","Sambar", "Chutney"
         ],
 
         lunch: [
-            "Rice",
-            "Dal",
-            "Beans Fry",
-            "Curd"
+            "Rice", "Fry Curry", "Dal", "Sambar","Curd"
         ],
 
         dinner: [
-            "Chapati",
-            "Veg Curry",
-            "Rice",
-            "Pickle"
+           "Chapati", "Rice", "Sambar", "Curd"
         ]
 
     },
@@ -125,23 +112,16 @@ const weeklyMenu = {
     tue: {
 
         breakfast: [
-            "Dosa",
-            "Chutney",
-            "Sambar",
-            "Tea"
+            "Bonda", "Or ", "Punugulu"
         ],
 
         lunch: [
-            "Rice",
-            "Sambar",
-            "Potato Fry",
-            "Curd"
+            "Rice", "Fry Curry", "Dal", "Rasam","Curd"
+           
         ],
 
         dinner: [
-            "Lemon Rice",
-            "Raita",
-            "Papad"
+            "Rice", "Egg Curry", "Banana"
         ]
 
     },
@@ -149,23 +129,19 @@ const weeklyMenu = {
     wed: {
 
         breakfast: [
-            "Upma",
-            "Coconut Chutney",
-            "Tea"
+            "Dosa",
+            "Sambar",
+            "Chutney"
         ],
 
         lunch: [
-            "Rice",
-            "Rajma",
-            "Fry",
-            "Curd"
+            "Rice", "Curry", "Dal", "Chutney","Curd"
         ],
 
         dinner: [
-            "Chapati",
-            "Dal",
-            "Rice",
-            "Veg Curry"
+           "Bagara Rice",
+           "Chicken Curry",
+           "Mushroom Curry"
         ]
 
     },
@@ -173,21 +149,20 @@ const weeklyMenu = {
     thu: {
 
         breakfast: [
-            "Pongal",
-            "Chutney",
-            "Tea"
+            "Pulihora",
+            "Or",
+            "Tamota Rice"
         ],
 
         lunch: [
-            "Veg Biryani",
-            "Raita",
-            "Curd"
+            "Rice", "Curry", "Dal", "Rasam","Curd"
         ],
 
         dinner: [
-            "Chapati",
-            "Mixed Veg Curry",
-            "Rice"
+            "Idly",
+            "Dosa",
+            "Or",
+            "Vada"
         ]
 
     },
@@ -195,22 +170,17 @@ const weeklyMenu = {
     fri: {
 
         breakfast: [
-            "Pesarattu",
-            "Ginger Chutney",
-            "Tea"
+            "Puri",
+            "Aloo Curry"
         ],
 
         lunch: [
-            "Rice",
-            "Dal",
-            "Ladies Finger Fry",
-            "Curd"
+            "Rice", "Curry", "Dal", "Chutney","Curd"
         ],
 
         dinner: [
-            "Chapati",
-            "Paneer Curry",
-            "Rice"
+            "Chicken Fried Rice",
+            "Veg Fried Rice"
         ]
 
     },
@@ -218,21 +188,18 @@ const weeklyMenu = {
     sat: {
 
         breakfast: [
-            "Uttapam",
-            "Sambar",
-            "Tea"
+            "Uthapam",
+            "Chutney"
+            
         ],
 
         lunch: [
-            "Fried Rice",
-            "Manchurian",
-            "Curd"
+            "Rice", "Fry Curry", "Dal", "Rasam","Curd"
+            
         ],
 
         dinner: [
-            "Chapati",
-            "Veg Kurma",
-            "Rice"
+            "Chapati", "Rice", "Sambar", "Curd", "Sweet"
         ]
 
     }
