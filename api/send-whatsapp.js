@@ -52,50 +52,50 @@ Please contact the visitor to confirm.
 
                     "Content-Type": "application/json"
                 },
-body: JSON.stringify({
-    messaging_product: "whatsapp",
+                body: JSON.stringify({
+                    messaging_product: "whatsapp",
 
-    to: process.env.WHATSAPP_TEST_RECIPIENT,
+                    to: process.env.WHATSAPP_TEST_RECIPIENT,
 
-    type: "template",
+                    type: "template",
 
-    template: {
-        name: "visit_request",
+                    template: {
+                        name: "visit_request_utility",
 
-        language: {
-            code: "en"
-        },
+                        language: {
+                            code: "en"
+                        },
 
-        components: [
-            {
-                type: "body",
+                        components: [
+                            {
+                                type: "body",
 
-                parameters: [
-                    {
-                        type: "text",
-                        text: name
-                    },
-                    {
-                        type: "text",
-                        text: phone
-                    },
-                    {
-                        type: "text",
-                        text: date
-                    },
-                    {
-                        type: "text",
-                        text: time
-                    },
-                    {
-                        type: "text",
-                        text: visitors
+                                parameters: [
+                                    {
+                                        type: "text",
+                                        text: name
+                                    },
+                                    {
+                                        type: "text",
+                                        text: phone
+                                    },
+                                    {
+                                        type: "text",
+                                        text: date
+                                    },
+                                    {
+                                        type: "text",
+                                        text: time
+                                    },
+                                    {
+                                        type: "text",
+                                        text: visitors
+                                    }
+                                ]
+                            }
+                        ]
                     }
-                ]
-            }
-        ]
-    }
-})
+                })
             }
         );
 
