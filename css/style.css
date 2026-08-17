@@ -58,7 +58,7 @@ a {
 
 .eyebrow {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 16.5px;
+    font-size: 18.5px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--kumkum);
@@ -1310,4 +1310,885 @@ footer {
     padding: 12px 22px;
     border-radius: 999px;
     font-weight: 600;
+}
+
+/* =================================
+   GYM IMAGE CAROUSEL
+================================= */
+
+.gym-image {
+    position: relative;
+    width: 100%;
+}
+
+.gym-carousel {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #eee;
+}
+
+.gym-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gym-slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+    transform: scale(1.03);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s ease;
+
+    pointer-events: none;
+}
+
+.gym-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Previous / Next buttons */
+
+.gym-prev,
+.gym-next {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #222;
+
+    font-size: 32px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.gym-prev {
+    left: 18px;
+}
+
+.gym-next {
+    right: 18px;
+}
+
+.gym-prev:hover,
+.gym-next:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+
+/* Dots */
+
+.gym-dots {
+    position: absolute;
+
+    left: 50%;
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 8px;
+
+    z-index: 6;
+}
+
+.gym-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease;
+}
+
+.gym-dot.active {
+    width: 25px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+
+/* Discount badge */
+
+.gym-badge {
+    position: absolute;
+
+    left: 24px;
+    bottom: 24px;
+
+    z-index: 10;
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    .gym-carousel {
+        height: 360px;
+        border-radius: 20px;
+    }
+
+    .gym-prev,
+    .gym-next {
+        width: 38px;
+        height: 38px;
+
+        font-size: 27px;
+    }
+
+    .gym-prev {
+        left: 12px;
+    }
+
+    .gym-next {
+        right: 12px;
+    }
+
+    .gym-badge {
+        left: 15px;
+        bottom: 15px;
+
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+}
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-section {
+    padding: 110px 0;
+    background: var(--cream);
+}
+
+.gallery-section .section-head {
+    max-width: 720px;
+    margin-bottom: 55px;
+}
+
+.gallery-section .section-head p {
+    max-width: 620px;
+}
+
+
+/* =========================================
+   ROOM GALLERY
+========================================= */
+
+.gallery-rooms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+
+.gallery-card {
+    background: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.11);
+}
+
+
+/* Featured room */
+
+.gallery-featured {
+    grid-column: span 2;
+}
+
+
+.gallery-photo {
+    position: relative;
+
+    height: 360px;
+
+    overflow: hidden;
+}
+
+
+.gallery-card:not(.gallery-featured) .gallery-photo {
+    height: 290px;
+}
+
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.gallery-card:hover .gallery-photo img {
+    transform: scale(1.04);
+}
+
+
+/* Room tag */
+
+.gallery-tag {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================
+   ROOM INFORMATION
+========================================= */
+
+.gallery-info {
+    display: flex;
+
+    gap: 22px;
+
+    padding: 25px 28px 30px;
+}
+
+
+.gallery-number {
+    flex-shrink: 0;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0.45;
+}
+
+
+.gallery-info h3 {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+}
+
+
+.gallery-info p {
+    margin: 0;
+
+    max-width: 560px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: 0.68;
+}
+
+
+/* =========================================
+   LIFESTYLE GALLERY
+========================================= */
+
+.gallery-lifestyle {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 28px;
+
+    margin-top: 28px;
+}
+
+
+.lifestyle-card {
+    background: #fff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.lifestyle-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.11);
+}
+
+
+.lifestyle-image {
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.lifestyle-large .lifestyle-image {
+    height: 350px;
+}
+
+
+.lifestyle-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.lifestyle-card:hover .lifestyle-image img {
+    transform: scale(1.04);
+}
+
+
+.lifestyle-content {
+    display: flex;
+
+    gap: 18px;
+
+    padding: 22px 24px 27px;
+}
+
+
+.lifestyle-content .eyebrow {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+}
+
+
+.lifestyle-content h3 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+}
+
+
+.lifestyle-content p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    opacity: 0.67;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .gallery-section {
+        padding: 80px 0;
+    }
+
+
+    .gallery-rooms {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-featured {
+        grid-column: span 1;
+    }
+
+
+    .gallery-photo,
+    .gallery-card:not(.gallery-featured) .gallery-photo {
+        height: 300px;
+    }
+
+
+    .gallery-lifestyle {
+        grid-template-columns: 1fr;
+    }
+
+
+    .lifestyle-image,
+    .lifestyle-large .lifestyle-image {
+        height: 300px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .gallery-info {
+        padding: 21px 20px 24px;
+
+        gap: 14px;
+    }
+
+
+    .gallery-info h3 {
+        font-size: 19px;
+    }
+
+
+    .gallery-info p {
+        font-size: 13px;
+    }
+
+
+    .lifestyle-content {
+        padding: 20px;
+    }
+
+}
+
+/* =========================================
+   GALLERY CAROUSEL
+========================================= */
+
+.gallery-section {
+    padding: 110px 0;
+    background: var(--cream);
+}
+
+
+.gallery-section .section-head {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+
+/* =========================================
+   CAROUSEL
+========================================= */
+
+.gallery-carousel {
+    max-width: 1050px;
+    margin: 0 auto;
+
+    background: #fff;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.gallery-visual {
+    position: relative;
+
+    width: 100%;
+    height: 560px;
+
+    overflow: hidden;
+}
+
+
+.gallery-visual img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.gallery-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: #222;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.gallery-arrow:hover {
+    transform: translateY(-50%) scale(1.08);
+
+    background: #fff;
+}
+
+
+.gallery-prev {
+    left: 22px;
+}
+
+
+.gallery-next {
+    right: 22px;
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.gallery-counter {
+    position: absolute;
+
+    bottom: 20px;
+    right: 22px;
+
+    display: flex;
+
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: #fff;
+
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.gallery-details {
+    padding: 34px 42px 38px;
+}
+
+
+.gallery-details-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+
+.gallery-category {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    font-weight: 700;
+
+    opacity: 0.55;
+}
+
+
+.gallery-details h3 {
+    margin: 0 0 12px;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+}
+
+
+.gallery-details p {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    opacity: 0.68;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.gallery-dots {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 27px;
+}
+
+
+.gallery-dot {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    opacity: 0.25;
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.gallery-dot.active {
+    width: 26px;
+
+    border-radius: 999px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .gallery-section {
+        padding: 80px 0;
+    }
+
+
+    .gallery-visual {
+        height: 400px;
+    }
+
+
+    .gallery-arrow {
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+
+    .gallery-prev {
+        left: 14px;
+    }
+
+
+    .gallery-next {
+        right: 14px;
+    }
+
+
+    .gallery-details {
+        padding: 27px 24px 30px;
+    }
+
+
+    .gallery-details h3 {
+        font-size: 24px;
+    }
+
+
+    .gallery-details p {
+        font-size: 14px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .gallery-visual {
+        height: 330px;
+    }
+
+}
+
+.photo-block {
+    width: 100%;
+    height: 420px;
+
+    overflow: hidden;
+    border-radius: 20px;
+
+    position: relative;
+}
+
+.photo-block img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+#about .photo-block {
+    width: 100%;
+    height: 420px;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: none !important;
+    border: none !important;
+
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+#about .photo-block img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+
+    border: none;
+    border-radius: 18px;
 }
