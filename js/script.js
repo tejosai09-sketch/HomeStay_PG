@@ -74,9 +74,7 @@ const weeklyMenu = {
     sun: {
 
         breakfast: [
-            "Upma",
-            "Or",
-            "Poha"
+            "Upma or Poha"
 
         ],
 
@@ -112,7 +110,7 @@ const weeklyMenu = {
     tue: {
 
         breakfast: [
-            "Bonda", "Or ", "Punugulu"
+            "Bonda or Punugulu"
         ],
 
         lunch: [
@@ -121,7 +119,7 @@ const weeklyMenu = {
         ],
 
         dinner: [
-            "Rice", "Egg Curry", "Banana"
+            "Rice", "Tomato / Soya chunks Curry", "Egg or Banana"
         ]
 
     },
@@ -149,9 +147,7 @@ const weeklyMenu = {
     thu: {
 
         breakfast: [
-            "Pulihora",
-            "Or",
-            "Tamota Rice"
+            "Pulihora or Tamota Rice"
         ],
 
         lunch: [
@@ -160,9 +156,8 @@ const weeklyMenu = {
 
         dinner: [
             "Idly",
-            "Dosa",
-            "Or",
-            "Vada"
+            "Dosa or Vada"
+
         ]
 
     },
@@ -179,7 +174,7 @@ const weeklyMenu = {
         ],
 
         dinner: [
-            "Chicken Fried Rice",
+            "Egg Fried Rice",
             "Veg Fried Rice"
         ]
 
@@ -487,7 +482,7 @@ const galleryItems = [
 
 
     {
-        image: "https://res.cloudinary.com/u6muhbms/image/upload/v1786954155/117812_ynswit.jpg",
+        image: "https://res.cloudinary.com/u6muhbms/image/upload/v1787148436/Gemini_Generated_Image_tdj3u5tdj3u5tdj3_1_bij8sm.png",
 
         alt: "3 sharing room at Home Stay Women's PG",
 
@@ -591,10 +586,10 @@ const galleryItems = [
 
         category: "Exterior",
 
-        title: "Welcome to Home Stay.",
+        title: "A Peaceful Terrace with Extraordinary Views",
 
         description:
-            "A welcoming exterior that gives you a first look at the comfortable and convenient place you'll call home."
+            "Enjoy your spare time with your friends and family on call or offline on the beautiful terrace"
     }
 ];
 
